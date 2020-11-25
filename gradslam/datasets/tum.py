@@ -208,11 +208,11 @@ class TUM(data.Dataset):
         if isinstance(sequences, tuple):
             if len(sequences) == 0:
                 raise ValueError(
-                    '"sequences" must have atleast one element. Got len(sequences)=0'
+                    '"sequences" must have at least one element. Got len(sequences)=0'
                 )
 
         # check if TUM folder structure correct: If sequences is not None, should contain all sequence paths.
-        # Should also contain atleast one sequence path.
+        # Should also contain at least one sequence path.
         sequence_paths = []
         dirmsg = "TUM folder should look something like:\n\n| ├── basedir\n"
         dirmsg += "| │   ├── rgbd_dataset_freiburgX_NAME\n| │   │   ├── depth/\n"
@@ -440,7 +440,7 @@ class TUM(data.Dataset):
         Args:
             color (np.ndarray): Raw input rgb image
 
-        Retruns:
+        Returns:
             np.ndarray: Preprocessed rgb image
 
         Shape:
@@ -482,7 +482,7 @@ class TUM(data.Dataset):
 
     def _preprocess_poses(self, poses: torch.Tensor):
         r"""Preprocesses the poses by setting first pose in a sequence to identity and computing the relative
-        homogenous transformation for all other poses.
+        homogeneous transformation for all other poses.
 
         Args:
             poses (torch.Tensor): Pose matrices to be preprocessed

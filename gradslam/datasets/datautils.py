@@ -56,7 +56,7 @@ def channels_first(rgb: Union[torch.Tensor, np.ndarray]):
 
     if rgb.ndim < 3:
         raise ValueError(
-            "Input rgb must contain atleast 3 dims, but had {} dims.".format(rgb.ndim)
+            "Input rgb must contain at least 3 dims, but had {} dims.".format(rgb.ndim)
         )
     if rgb.shape[-3] < rgb.shape[-1]:
         msg = "Are you sure that the input is correct? Number of channels exceeds height of image: %r > %r"
@@ -86,7 +86,7 @@ def scale_intrinsics(
             :math:`w_\text{ratio} = w_\text{new} / w_\text{old}`
 
     Returns:
-        numpy.ndarray or torch.Tensor: Intrinsics matrix scaled approprately for new frame size
+        numpy.ndarray or torch.Tensor: Intrinsics matrix scaled appropriately for new frame size
 
     Shape:
         - intrinsics: :math:`(*, 3, 3)` or :math:`(*, 4, 4)`

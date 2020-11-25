@@ -13,7 +13,7 @@ class GroundTruthOdometryProvider(OdometryProvider):
     """
 
     def provide(self, rgbdimages1: RGBDImages, rgbdimages2: RGBDImages) -> torch.Tensor:
-        r"""Computes the relative homogenous transformation between poses of `rgbdimages2` and `rgbdimages1`.
+        r"""Computes the relative homogeneous transformation between poses of `rgbdimages2` and `rgbdimages1`.
         The relative transformation is computed as :math:`T = (T_1)^{-1} \cdot T_2`.
 
         Args:

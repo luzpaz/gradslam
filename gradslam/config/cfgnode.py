@@ -414,7 +414,7 @@ class CfgNode(dict):
         return value
 
 
-# Keep this function in global scope, for backward compataibility.
+# Keep this function in global scope, for backward compatibility.
 load_cfg = CfgNode.load_cfg
 
 

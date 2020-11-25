@@ -1044,7 +1044,7 @@ class Pointclouds(object):
         return other
 
     def detach(self):
-        r"""Detachs Pointclouds object. All internal tensors are detached individually.
+        r"""Detaches Pointclouds object. All internal tensors are detached individually.
 
         Returns:
             gradslam.Pointclouds: detached gradslam.Pointclouds object

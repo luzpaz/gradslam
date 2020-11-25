@@ -293,7 +293,7 @@ class Scannet(data.Dataset):
         Args:
             color (np.ndarray): Raw input rgb image
 
-        Retruns:
+        Returns:
             np.ndarray: Preprocessed rgb image
 
         Shape:

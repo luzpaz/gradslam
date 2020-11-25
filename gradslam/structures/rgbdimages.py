@@ -463,7 +463,7 @@ class RGBDImages(object):
         self._global_normal_map = None
 
     def detach(self):
-        r"""Detachs RGBDImages object. All internal tensors are detached individually.
+        r"""Detaches RGBDImages object. All internal tensors are detached individually.
 
         Returns:
             gradslam.RGBDImages: detached gradslam.RGBDImages object
@@ -641,7 +641,7 @@ class RGBDImages(object):
         )
 
     def _compute_vertex_map(self):
-        r"""Coverts a batch of depth images into a batch of vertex maps."""
+        r"""Converts a batch of depth images into a batch of vertex maps."""
         B, L = self.shape[:2]
         device = self._depth_image.device
         if self._pixel_pos is None:
@@ -679,7 +679,7 @@ class RGBDImages(object):
         )
 
     def _compute_global_vertex_map(self):
-        r"""Coverts a batch of local vertex maps into a batch of global vertex maps."""
+        r"""Converts a batch of local vertex maps into a batch of global vertex maps."""
         if self._poses is None:
             self._global_vertex_map = self.vertex_map.clone()
             return
@@ -743,7 +743,7 @@ class RGBDImages(object):
         )
 
     def _compute_global_normal_map(self):
-        r"""Coverts a batch of local noraml maps into a batch of global normal maps."""
+        r"""Converts a batch of local normal maps into a batch of global normal maps."""
         if self._poses is None:
             self._global_normal_map = self.normal_map.clone()
             return

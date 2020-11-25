@@ -224,7 +224,7 @@ class ICL(data.Dataset):
         if isinstance(trajectories, tuple):
             if len(trajectories) == 0:
                 raise ValueError(
-                    '"trajectories" must have atleast one element. Got len(trajectories)=0'
+                    '"trajectories" must have at least one element. Got len(trajectories)=0'
                 )
             msg = '"trajectories" should only contain trajectory folder names of the following convention: '
             msg += '"living_room_trajX_frei_png". It contained: {0}.'
@@ -234,7 +234,7 @@ class ICL(data.Dataset):
             valid_trajectory_dirs = list(trajectories)
 
         # check if ICL folder structure correct: If trajectories is not None, should contain all trajectory paths.
-        # Should also contain atleast one trajectory path.
+        # Should also contain at least one trajectory path.
         trajectory_paths = []
         dirmsg = "ICL folder should look something like:\n\n| ├── basedir\n"
         for i in range(4):
@@ -472,7 +472,7 @@ class ICL(data.Dataset):
         Args:
             color (np.ndarray): Raw input rgb image
 
-        Retruns:
+        Returns:
             np.ndarray: Preprocessed rgb image
 
         Shape:
@@ -514,7 +514,7 @@ class ICL(data.Dataset):
 
     def _preprocess_poses(self, poses: torch.Tensor):
         r"""Preprocesses the poses by setting first pose in a sequence to identity and computing the relative
-        homogenous transformation for all other poses.
+        homogeneous transformation for all other poses.
 
         Args:
             poses (torch.Tensor): Pose matrices to be preprocessed

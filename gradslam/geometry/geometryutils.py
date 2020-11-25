@@ -28,7 +28,7 @@ def homogenize_points(pts: torch.Tensor):
         )
     if pts.dim() < 2:
         raise ValueError(
-            "Input tensor must have at least 2 dimensions. Got {} instad.".format(
+            "Input tensor must have at least 2 dimensions. Got {} instead.".format(
                 pts.dim()
             )
         )
@@ -60,7 +60,7 @@ def unhomogenize_points(pts: torch.Tensor, eps: float = 1e-6) -> torch.Tensor:
         )
     if pts.dim() < 2:
         raise ValueError(
-            "Input tensor must have at least 2 dimensions. Got {} instad.".format(
+            "Input tensor must have at least 2 dimensions. Got {} instead.".format(
                 pts.dim()
             )
         )
@@ -224,7 +224,7 @@ def inverse_transfom_3d(trans: torch.Tensor):
             "Input size must be N x 4 x 4 or 4 x 4. Got {} instead.".format(trans.shape)
         )
 
-    # Unpack tensor into rotation and tranlation components
+    # Unpack tensor into rotation and translation components
     rmat: torch.Tensor = trans[..., :3, :3]
     tvec: torch.Tensor = trans[..., :3, 3]
 
@@ -307,7 +307,7 @@ def transform_pts_3d(pts_b: torch.Tensor, t_ab: torch.Tensor) -> torch.Tensor:
 
     Args:
         pts_b (torch.Tensor): points to be transformed (shape: :math:`N \times 3`)
-        t_ab (torch.Tensor): homogenous 3D transformation matrix (shape: :math:`4 \times 4`)
+        t_ab (torch.Tensor): homogeneous 3D transformation matrix (shape: :math:`4 \times 4`)
 
     Returns:
         pts_a (torch.Tensor): `pts_b` transformed to the coordinate frame `a`
@@ -413,7 +413,7 @@ def relative_transform_3d(
 def relative_transformation(
     trans_01: torch.Tensor, trans_02: torch.Tensor, orthogonal_rotations: bool = False
 ) -> torch.Tensor:
-    r"""Function that computes the relative homogenous transformation from a
+    r"""Function that computes the relative homogeneous transformation from a
     reference transformation :math:`T_1^{0} = \begin{bmatrix} R_1 & t_1 \\
     \mathbf{0} & 1 \end{bmatrix}` to destination :math:`T_2^{0} =
     \begin{bmatrix} R_2 & t_2 \\ \mathbf{0} & 1 \end{bmatrix}`.

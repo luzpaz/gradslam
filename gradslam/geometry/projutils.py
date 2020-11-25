@@ -35,7 +35,7 @@ def homogenize_points(pts: torch.Tensor):
         )
     if pts.dim() < 2:
         raise ValueError(
-            "Input tensor must have at least 2 dimensions. Got {} instad.".format(
+            "Input tensor must have at least 2 dimensions. Got {} instead.".format(
                 pts.dim()
             )
         )
@@ -73,7 +73,7 @@ def unhomogenize_points(pts: torch.Tensor, eps: float = 1e-6) -> torch.Tensor:
         )
     if pts.dim() < 2:
         raise ValueError(
-            "Input tensor must have at least 2 dimensions. Got {} instad.".format(
+            "Input tensor must have at least 2 dimensions. Got {} instead.".format(
                 pts.dim()
             )
         )

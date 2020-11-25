@@ -38,7 +38,7 @@ class ICPOdometryProvider(OdometryProvider):
         maps_pointclouds: Pointclouds,
         frames_pointclouds: Pointclouds,
     ) -> torch.Tensor:
-        r"""Uses ICP to compute the relative homogenous transformation that, when applied to `frames_pointclouds`,
+        r"""Uses ICP to compute the relative homogeneous transformation that, when applied to `frames_pointclouds`,
         would cause the points to align with points of `maps_pointclouds`.
 
         Args:
